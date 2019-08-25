@@ -10,17 +10,20 @@ import { HeroesService } from 'src/app/services/heroes.service';
 export class BuscadorComponent implements OnInit {
 
   heroes:any[] = [];
+  termino:string;
 
   constructor(private activatedRoute: ActivatedRoute,
               private heroesService:HeroesService) { }
 
   ngOnInit() {
 
+    // con esta funcion capturo el texto del input y lo envio al servicio 
+    // para que se procese y se haga la redireccion
+
     this.activatedRoute.params.subscribe( params => {
-      //console.log(params['termino']);
+      this.termino = params['termino'];
       this.heroes = this.heroesService.buscarHeroes( params['termino'] );
-      console.log(this.heroes);
-    })
+    });
 
   }
 
