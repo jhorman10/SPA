@@ -19,8 +19,8 @@
       </ul>
       <form class="form-inline my-2 my-lg-0" onsubmit="return false">
 
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar Héroe" 
-          #buscarTexto (keyup.enter)="buscarHeroes(buscarTexto.value)"
+        <input class="form-control mr-sm-2" type="text" placeholder="Buscar Héroe" 
+          (keyup.enter)="buscarHeroes(buscarTexto.value)" #buscarTexto
         >
 
         <button (click)="buscarHeroes(buscarTexto.value)"
